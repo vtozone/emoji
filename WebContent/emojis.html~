@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表情插件</title>
+<link rel="stylesheet" href="css/smiling.emoji.min.v1.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.emoji.min.v1.js"></script>
+<script type="text/javascript" src="js/emoji.json.js"></script>
+
+
+<script type="text/javascript">
+// 示例代码
+$(function(){
+	$("#showFace").emoji({
+		width:'500',//表情输入框的框
+		height:'300',//表情输入框的高
+		callback:function(data){
+			//data是点击“发布之后的结果”
+			//解析结果
+			$("#display").html($("#showFace").emoji('parse',data).parseValue());
+		}
+	})
+});
+</script>
+</head>
+<body>
+<!-- 展示解析结果 -->
+<div id="display"></div>
+
+<!-- 表情输入框 -->
+<div id="showFace"></div>
+
+</body>
+</html>
